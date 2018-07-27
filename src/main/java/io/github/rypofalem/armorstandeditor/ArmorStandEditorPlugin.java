@@ -22,6 +22,7 @@ package io.github.rypofalem.armorstandeditor;
 import io.github.rypofalem.armorstandeditor.language.Language;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -71,7 +72,7 @@ public class ArmorStandEditorPlugin extends JavaPlugin{
 		requireToolData = getConfig().getBoolean("requireToolData", false);
 		if(requireToolData) editToolData = getConfig().getInt("toolData", Integer.MIN_VALUE);
 		requireToolLore = getConfig().getBoolean("requireToolLore", false);
-		if(requireToolLore) editToolLore= getConfig().getString("toolLore", null);
+		if(requireToolLore) editToolLore= ChatColor.translateAlternateColorCodes('&', getConfig().getString("toolLore", null));
 		debug = getConfig().getBoolean("debug", true);
 		sendToActionBar = getConfig().getBoolean("sendMessagesToActionBar", true);
 
